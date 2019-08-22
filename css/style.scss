@@ -1,0 +1,271 @@
+// Media Queries
+
+@mixin desktop {
+    @media (min-width: 992px) {
+        @content;
+    }
+}
+
+
+
+
+
+body {
+    width: 100%;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(55, 227, 181, 1) 0%, rgba(78, 228, 126, 0.54) 90%);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto';
+    color: #445552;
+}
+
+h1 {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 5vh;
+    font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    color: rgb(240, 240, 240);
+
+    @include desktop {
+        margin-top: 30px;
+    }
+}
+
+.cards {
+    opacity: 0;
+    transition: 1s ease-in-out;
+    transform: translateY(-100px);
+
+}
+
+.cards.showup {
+    opacity: 0.8;
+    transform: translateY(0);
+
+}
+
+.cards.showup:hover {
+    opacity: 1;
+}
+
+
+.wrapper {
+
+    width: 90%;
+    margin: 0 auto;
+
+
+
+    @include desktop {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+
+    #card1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #card2 {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #card3 {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .cards {
+        width: 100%;
+        background: white;
+        -webkit-box-shadow: -6px 7px 55px -21px rgba(0, 0, 0, 0.35);
+        -moz-box-shadow: -6px 7px 55px -21px rgba(0, 0, 0, 0.35);
+        box-shadow: -6px 7px 55px -21px rgba(0, 0, 0, 0.35);
+        margin-bottom: 30px;
+        border-radius: 14px;
+        overflow: hidden;
+        max-width: 480px;
+        transition: .3s ease-in;
+        margin: 30px auto;
+
+
+        .card-header {
+            width: 100%;
+
+            max-width: 480px;
+
+
+            .img-wrapper {
+                width: 100%;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    max-width: 480px;
+
+                }
+            }
+        }
+
+        .contents {
+            padding: 30px 15px;
+            text-align: center;
+
+
+            h2,
+            h5,
+            p {
+                margin-bottom: 13px;
+            }
+
+            h2 {
+                font-weight: 700;
+                font-size: 5vh;
+                color: rgb(155, 48, 110);
+                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+
+            }
+
+            h5 {
+                color: rgb(0, 104, 173);
+                font-weight: 500;
+                font-size: 3vh;
+            }
+
+            p {
+                font-size: 2.5vh;
+            }
+
+            .social-media {
+                margin-top: 25px;
+
+
+                .twitter,
+                .fb,
+                .linkedin {
+                    margin-right: 10px;
+                    cursor: pointer;
+                    transition: 0.3s ease-in;
+                }
+
+                .twitter:hover,
+                .fb:hover,
+                .linkedin:hover {
+                    transform: scale(1.1);
+                }
+
+                .linkedin {
+                    color: #134074;
+
+                }
+
+                .twitter {
+                    color: #1DA1F2;
+                }
+
+                .fb {
+                    color: #4267B2;
+                }
+
+            }
+
+
+        }
+
+    }
+
+
+
+    .cards:hover {
+        -webkit-box-shadow: -6px 7px 55px -21px rgba(0, 0, 0, 0.35);
+        -moz-box-shadow: -6px 7px 55px -21px rgba(0, 0, 0, 0.35);
+        box-shadow: -6px 7px 55px -21px rgba(0, 0, 0, 0.70);
+    }
+
+}
+
+#card2 {
+
+    a {
+        text-decoration: none;
+        color: rgb(32, 105, 214);
+
+
+    }
+
+    a:hover {
+        color: #445552;
+    }
+
+
+    .contents {
+        text-align: left;
+
+
+
+        h2 {
+            margin-top: 10px;
+            color: rgba(0, 0, 0, 0.7);
+
+
+        }
+    }
+
+
+
+
+}
+
+#card3 {
+    a {
+        text-decoration: none;
+    }
+
+    h2 {
+        color: rgb(83, 18, 156);
+    }
+
+    .faceb,
+    .be,
+    .db {
+        font-size: 5vh;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    .faceb:hover,
+    .be:hover,
+    .db:hover {
+        animation: bounce .5s ease-out .1s;
+    }
+
+    .faceb {
+        color: #4267B2;
+    }
+
+    .be {
+        color: black;
+    }
+
+    .db {
+        color: #AD2058;
+    }
+}
+
+@keyframes bounce {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-10px);
+    }
+
+
+
+}
